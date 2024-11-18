@@ -83,4 +83,8 @@ musics.map((music) => {
     musicDetailsCont.appendChild(musicArtist)
     musicArtist.appendChild(musicArtistText);
     musicArtist.classList.add("musicCharts__music__artist");
+
+    card.addEventListener("hover", () => {
+        albumCover.classList.add("--hovered");
+    })
 })
