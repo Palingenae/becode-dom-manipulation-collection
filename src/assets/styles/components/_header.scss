@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-400);
+  padding: var(--spacing-400);
+
+  & > img {
+    border-radius: 100%;
+  }
+
+  @include very-very-large-display {
+    padding: var(--spacing-800) var(--spacing-1600);
+  }
+
+  @include very-large-display {
+    padding: var(--spacing-400) var(--spacing-800);
+  }
+
+  @include large-display {
+    padding: var(--spacing-400) var(--spacing-1600);
+  }
+
+  @include medium-display {
+    padding: var(--spacing-200);
+  }
+
+  @include small-display {
+    padding: var(--spacing-200);
+  }
+}

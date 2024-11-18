@@ -1,0 +1,60 @@
+.musicCharts {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: start;
+  align-items: start;
+  gap: var(--spacing-100);
+  width: 100%;
+  justify-content: center;
+  counter-set: music-charts;
+  &Container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__music {
+    border-radius: var(--spacing-100);
+    padding: var(--spacing-100);
+    transition: background-color 0.1s ease-in;
+    counter-increment: music-charts;
+    &:hover {
+      background-color: var(--neutral-100);
+      .musicCharts__music__details::before {
+        color: var(--color-amethyst-500);
+      }
+    }
+    &__details {
+      &::before {
+        content: counter(music-charts);
+        font-family: var(--font-text);
+        font-size: var(--fs-step-5);
+        font-variation-settings: 'wght' 700;
+        font-feature-settings: "tnum";
+        color: var(--neutral-100);
+        transition: color 0.1s ease-in;
+      }
+    }
+    &__cover {
+      width: 100%;
+      border-radius: var(--spacing-50);
+      margin-bottom: var(--spacing-25);
+    }
+    &__title {
+      font-family: var(--font-display);
+      font-size: var(--fs-step-2);
+      font-variation-settings: 'opsz' 96, 'wdth' 100, 'wght' 500;
+      letter-spacing: 0.005rem;
+      font-weight: 500;
+      margin-top: -2.75rem;
+      margin-bottom: var(--spacing-50);
+      margin-left: var(--spacing-400);
+    }
+
+    &__artist {
+      font-family: var(--font-text);
+      font-variation-settings: var(--weight-base-var);
+      font-weight: var(--weight-base-static);
+      color: var(--neutral-600);
+      margin-left: var(--spacing-400);
+    }
+  }
+}

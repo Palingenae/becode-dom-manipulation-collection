@@ -6,24 +6,23 @@
   padding: var(--spacing-400);
 
   @include very-very-large-display {
-    padding: var(--spacing-800) var(--spacing-400);
+    padding: var(--spacing-800) var(--spacing-1600);
   }
 
   @include very-large-display {
-    padding: var(--spacing-600);
+    padding: var(--spacing-400) var(--spacing-800);
   }
 
   @include large-display {
-    padding: var(--spacing-400);
+    padding: var(--spacing-400) var(--spacing-1600);
   }
 
   @include medium-display {
-    flex-direction: column;
-    padding: var(--spacing-400);
+    padding: var(--spacing-200);
   }
 
   @include small-display {
-    padding: var(--spacing-400) var(--spacing-200);
+    padding: var(--spacing-200);
   }
 
   &.--offset {
@@ -92,7 +91,7 @@
   }
 }
 
-.-column {
+.--column {
   flex-direction: column;
 }
 

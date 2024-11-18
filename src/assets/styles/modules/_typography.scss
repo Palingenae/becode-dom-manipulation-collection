@@ -9,9 +9,9 @@
 }
 
 @font-face {
-  font-family: Manrope;
+  font-family: Inter;
   font-style: normal;
-  src: url('../fonts/manrope/manrope[wght].woff2');
+  src: url('../fonts/inter/InterVariable.woff2');
 }
 
 /*
@@ -24,7 +24,7 @@ h1 {
   font-variation-settings: 'opsz' 12, 'wdth' 100, 'wght' 800;
   font-weight: 800;
   letter-spacing: var(--spacing-letter-spacing-title);
-  margin-bottom: var(--spacing-200);
+  margin-bottom: 0;
 }
 
 h2 {
@@ -33,7 +33,7 @@ h2 {
   font-variation-settings: 'opsz' 12, 'wdth' 100, 'wght' 600;
   font-weight: 600;
   letter-spacing: var(--spacing-letter-spacing-title);
-  margin-bottom: 0;
+  margin-bottom: var(--spacing-200);
 }
 
 h3 {
@@ -118,10 +118,11 @@ h4 {
 }
 
 .context {
-  &.-subtitle {
+  &.--subtitle {
     font-family: var(--font-text);
     font-size: var(--fs-step-3);
-    font-variation-settings: 'wght' 700;
+    font-variation-settings: 'wght' 500;
+    color: var(--neutral-600);
     margin-bottom: var(--spacing-100);
   }
 }
