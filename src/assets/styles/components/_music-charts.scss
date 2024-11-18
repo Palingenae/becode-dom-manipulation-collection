@@ -55,11 +55,12 @@
         font-size: var(--fs-step-5);
         font-variation-settings: 'wght' 700;
         font-feature-settings: "tnum";
+        text-align: right;
         color: var(--neutral-100);
         transition: color 0.1s ease-in;
 
         @include small-display {
-          margin-left: var(--spacing-100);
+          display: none;
         }
       }
     }
@@ -75,6 +76,7 @@
       @include small-display {
         max-height: 5rem;
         width: auto;
+        margin-bottom: 0;
       }
     }
     &__title {
@@ -88,7 +90,7 @@
       margin-left: var(--spacing-300);
 
       @include small-display {
-        margin-left: var(--spacing-600);
+        margin: 0;
       }
     }
 
@@ -100,7 +102,7 @@
       margin-left: var(--spacing-300);
 
       @include small-display {
-        margin-left: var(--spacing-600);
+        margin: 0;
       }
     }
   }

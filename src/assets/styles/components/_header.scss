@@ -27,6 +27,9 @@
   }
 
   @include small-display {
+    flex-direction: column-reverse;
+    align-items: center;
     padding: var(--spacing-200);
+    margin-bottom: var(--spacing-400);
   }
 }
