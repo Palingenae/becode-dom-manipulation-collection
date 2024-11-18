@@ -1,5 +1,6 @@
 import user from '../data/user.json'
 import charts from '../data/charts.json';
+import lovedSongs from '../data/loved-songs.json';
 
 const root = document.getElementById("root");
 const rootChild = document.createElement("main");
@@ -15,8 +16,6 @@ profilePhotoSrc.value = user.picture_medium;
 
 root.appendChild(rootChild);
 rootChild.appendChild(headerEl);
-// rootChild.classList.add("section");
-// rootChild.appendChild(headerEl);
 
 headerEl.appendChild(userNameDescContainer);
 
@@ -31,10 +30,25 @@ pageDescription.classList.add("--subtitle");
 headerEl.appendChild(profilePhotoEl);
 profilePhotoEl.setAttributeNode(profilePhotoSrc);
 
+// const lovedSongsBlockLink = document.createElement("a");
+// const lovedSongsBlockLinkHref = document.createAttribute("href")
+// const lovedSongsBlock = document.createElement("section");
+// const lovedSongsName = document.createElement("p");
+// const lovedSongsNameText = document.createTextNode(`${lovedSongs.tracks.data.length} loved songs`);
+// rootChild.appendChild(lovedSongsBlockLink);
+// lovedSongsBlockLink.classList.add("lovedSongs__link")
+// lovedSongsBlockLink.appendChild(lovedSongsBlock);
+// lovedSongsBlock.classList.add("lovedSongs");
+// lovedSongsBlockLink.setAttributeNode(lovedSongsBlockLinkHref);
+// lovedSongsBlock.appendChild(lovedSongsName);
+// lovedSongsName.appendChild(lovedSongsNameText);
+// lovedSongsName.classList.add("lovedSongs__name");
+// lovedSongsBlockLinkHref.value('#');
+
 const chartsSection = document.createElement("section");
 const chartsContainer = document.createElement("div");
 const chartsTitle = document.createElement("h2");
-const chartsTitleText = document.createTextNode("Top listened");
+const chartsTitleText = document.createTextNode("Top listened recently");
 
 const musics = charts.data;
 rootChild.appendChild(chartsSection);

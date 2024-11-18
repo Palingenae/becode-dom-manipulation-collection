@@ -10,11 +10,11 @@
   }
 
   @include very-large-display {
-    padding: var(--spacing-400) var(--spacing-800);
+    padding: var(--spacing-600);
   }
 
   @include large-display {
-    padding: var(--spacing-400) var(--spacing-1600);
+    padding: var(--spacing-400);
   }
 
   @include medium-display {
@@ -22,35 +22,7 @@
   }
 
   @include small-display {
-    padding: var(--spacing-200);
-  }
-
-  &.--offset {
-    padding: var(--spacing-800) var(--spacing-2400);
-    //@include very-very-large-display {
-    //  padding: var(--spacing-800) var(--spacing-1600);
-    //}
-
-    //@include very-large-display {
-    //  padding: {
-    //    top: $spacing-800;
-    //    left: calc($spacing-800 * 3);
-    //    right: $spacing-1600;
-    //    bottom: $spacing-800;
-    //  }
-    //}
-    //
-    //@include large-display {
-    //  padding: var(--spacing-600) var(--spacing-1600);
-    //}
-    //
-    //@include medium-display {
-    //  padding: $spacing-400;
-    //}
-    //
-    //@include small-display {
-    //  padding: var(--spacing-200) var(--spacing-400);
-    //}
+    padding: var(--spacing-100);
   }
 
   & > .main {
