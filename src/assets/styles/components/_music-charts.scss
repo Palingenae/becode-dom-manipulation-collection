@@ -66,13 +66,21 @@
     }
     &__cover {
       width: 100%;
+      height: 100%;
       border-radius: var(--spacing-50);
-      margin-bottom: var(--spacing-25);
-
-      &:hover {
-        background-color: rgba(var(--color-amethyst-500), 0.7);
-        mix-blend-mode: multiply;
+      mix-blend-mode: normal;
+      transition: mix-blend-mode 0.1s ease-in;
+      &Container {
+        background-color: var(--color-amethyst-400);
+        border-radius: var(--spacing-50);
+        margin-bottom: var(--spacing-25);
+        &:hover {
+          .musicCharts__music__cover {
+            mix-blend-mode: soft-light;
+          }
+        }
       }
+
 
       @include medium-display {
         margin-bottom: var(--spacing-100);
