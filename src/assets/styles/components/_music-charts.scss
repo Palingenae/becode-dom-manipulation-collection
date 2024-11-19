@@ -1,0 +1,152 @@
+.musicCharts {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: start;
+  align-items: stretch;
+  gap: var(--spacing-100);
+  width: 100%;
+  justify-content: center;
+  counter-set: music-charts;
+
+  @include very-large-display {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  @include large-display {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include medium-display {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include small-display {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &Container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__music {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    border-radius: var(--spacing-100);
+    padding: var(--spacing-100);
+    transition: background-color 0.1s ease-in;
+    counter-increment: music-charts;
+
+    @include small-display {
+      flex-direction: row;
+      gap: var(--spacing-200);
+      align-items: center;
+      width: 100%;
+    }
+
+    &:hover {
+      background-color: var(--neutral-100);
+      .musicCharts__music__details::before {
+        color: var(--color-amethyst-500);
+      }
+
+      .musicCharts__music__cover {
+        opacity: 0.7;
+        mix-blend-mode: soft-light;
+      }
+    }
+    &__details {
+      width: 100%;
+      height: 100%;
+      &::before {
+        content: counter(music-charts);
+        font-family: var(--font-text);
+        font-size: var(--fs-step-5);
+        font-variation-settings: 'wght' 700;
+        font-feature-settings: "tnum";
+        text-align: right;
+        color: var(--neutral-100);
+        transition: color 0.1s ease-in;
+
+        @include small-display {
+          display: none;
+        }
+      }
+    }
+    &__cover {
+      width: 100%;
+      height: 100%;
+      object-fit: contain ;
+      border-radius: var(--spacing-50);
+      mix-blend-mode: normal;
+      opacity: 1;
+      transition: opacity 0.1s ease-in;
+      &Container {
+        background-color: var(--color-amethyst-500);
+        border-radius: var(--spacing-50);
+        margin-bottom: var(--spacing-25);
+        @include medium-display {
+          margin-bottom: var(--spacing-100);
+        }
+        @include small-display {
+          margin-bottom: 0;
+        }
+      }
+
+      @include small-display {
+        max-height: 5rem;
+        width: auto;
+        margin-bottom: 0;
+      }
+    }
+
+    &__title {
+      font-family: var(--font-display);
+      font-size: var(--fs-step-2);
+      font-variation-settings: 'opsz' 96, 'wdth' 100, 'wght' 500;
+      letter-spacing: 0.005rem;
+      font-weight: 500;
+      margin-top: -2.75rem;
+      margin-bottom: var(--spacing-25);
+      margin-left: var(--spacing-300);
+
+      @include small-display {
+        margin: 0;
+      }
+    }
+
+    &__artist {
+      font-family: var(--font-text);
+      font-variation-settings: var(--weight-base-var);
+      font-weight: var(--weight-base-static);
+      color: var(--neutral-600);
+      margin-left: var(--spacing-300);
+
+      @include small-display {
+        margin: 0;
+      }
+    }
+
+    &__preview {
+      @extend %button;
+
+      appearance: none;
+      border: 0;
+      display: flex;
+      justify-self: flex-end;
+      border-radius: 16rem;
+      background-color: var(--neutral-50);
+      padding: var(--spacing-100);
+      margin-left: var(--spacing-100);
+      &:hover {
+        background-color: var(--color-amethyst-500);
+      }
+      & > .iconoir-play-solid,
+      & > .iconoir-pause-solid {
+        color: var(--neutral-900);
+        font-size: var(--fs-step-2);
+      }
+    }
+  }
+}

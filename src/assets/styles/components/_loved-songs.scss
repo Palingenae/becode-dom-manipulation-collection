@@ -1,0 +1,12 @@
+.lovedSongs {
+  @extend .section;
+  display: flex;
+  &__link {
+    text-decoration: none;
+    color: inherit;
+  }
+  &__name {
+    font-family: var(--font-display);
+    font-size: var(--fs-step-3);
+  }
+}

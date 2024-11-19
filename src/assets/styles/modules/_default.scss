@@ -6,8 +6,8 @@
 }
 
 ::selection {
-  background-color: var(--neutral-900);
-  color: var(--neutral-100);
+  background-color: var(--color-amethyst-600);
+  color: var(--neutral-50);
 }
 
 body {
@@ -26,4 +26,12 @@ body {
   font-weight: var(--font-weight-static);
   background-color: var(--neutral-0);
   color: var(--neutral-900);
+}
+
+img {
+  display: block;
+}
+
+main {
+  margin: 0 auto;
 }

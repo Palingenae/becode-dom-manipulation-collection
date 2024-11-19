@@ -1,0 +1,33 @@
+/* ----- This deserves to be a mixin ----- */
+.button, %button {
+  font-variation-settings: 'wght' 500;
+  font-size: var(--fs-step-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-150);
+  border-radius: 8px;
+  text-decoration: none;
+  padding: var(--spacing-100) var(--spacing-200);
+  transition: background-color 0.1s ease-in, color 0.1s ease-in;
+
+  &:hover,
+  &:focus {
+    background-color: var(--neutral-100);
+    text-decoration: none;
+  }
+
+
+  &.-hasIcon {
+    display: inline-flex;
+    align-items: center;
+
+    .icon {
+      font-size: var(--fs-step-2);
+      @include small-display {
+        font-size: var(--fs-step-3);
+      }
+    }
+  }
+
+}
