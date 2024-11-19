@@ -17,9 +17,6 @@
     text-decoration: none;
   }
 
-  @include small-display {
-    width: 100%
-  }
 
   &.-hasIcon {
     display: inline-flex;
@@ -27,6 +24,9 @@
 
     .icon {
       font-size: var(--fs-step-2);
+      @include small-display {
+        font-size: var(--fs-step-3);
+      }
     }
   }
 

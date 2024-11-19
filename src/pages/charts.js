@@ -4,17 +4,17 @@ import charts from '../data/charts.json';
 const root = document.getElementById("root");
 const rootChild = document.createElement("main");
 
-const navigation = document.createElement("nav");
+const nav = document.createElement("nav");
 const themeToggler = document.createElement("button");
 const themeTogglerAttr = document.createAttribute("data-theme-toggle");
 const themeTogglerIcon = document.createElement("i");
 const themeTogglerIconDataAttr = document.createAttribute("data-theme-icon");
 const themeTogglerIconAriaHiddenAttr = document.createAttribute("aria-hidden")
 
-root.appendChild(navigation);
-navigation.appendChild(themeToggler);
+root.appendChild(nav);
+nav.appendChild(themeToggler);
 themeToggler.appendChild(themeTogglerIcon);
-navigation.classList.add("navigation");
+nav.classList.add("navigation");
 themeToggler.classList.add("themeToggler");
 themeToggler.setAttributeNode(themeTogglerAttr);
 themeTogglerIcon.classList.add("iconoir-half-moon");

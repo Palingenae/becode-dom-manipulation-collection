@@ -1,4 +1,6 @@
 import './assets/styles/styles.scss';
 
-import './utils/setRoot.js';
+import './pages/charts.js';
+
 import './utils/themeSwitcher.js';
+
