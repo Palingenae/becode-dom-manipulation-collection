@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   justify-items: start;
-  align-items: start;
+  align-items: stretch;
   gap: var(--spacing-100);
   width: 100%;
   justify-content: center;
@@ -30,13 +30,16 @@
     flex-direction: column;
   }
   &__music {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
     border-radius: var(--spacing-100);
     padding: var(--spacing-100);
     transition: background-color 0.1s ease-in;
     counter-increment: music-charts;
 
     @include small-display {
-      display: flex;
+      flex-direction: row;
       gap: var(--spacing-200);
       align-items: center;
       width: 100%;
@@ -47,8 +50,15 @@
       .musicCharts__music__details::before {
         color: var(--color-amethyst-500);
       }
+
+      .musicCharts__music__cover {
+        opacity: 0.7;
+        mix-blend-mode: soft-light;
+      }
     }
     &__details {
+      width: 100%;
+      height: 100%;
       &::before {
         content: counter(music-charts);
         font-family: var(--font-text);
@@ -67,23 +77,21 @@
     &__cover {
       width: 100%;
       height: 100%;
+      object-fit: contain ;
       border-radius: var(--spacing-50);
       mix-blend-mode: normal;
-      transition: mix-blend-mode 0.1s ease-in;
+      opacity: 1;
+      transition: opacity 0.1s ease-in;
       &Container {
-        background-color: var(--color-amethyst-400);
+        background-color: var(--color-amethyst-500);
         border-radius: var(--spacing-50);
         margin-bottom: var(--spacing-25);
-        &:hover {
-          .musicCharts__music__cover {
-            mix-blend-mode: soft-light;
-          }
+        @include medium-display {
+          margin-bottom: var(--spacing-100);
         }
-      }
-
-
-      @include medium-display {
-        margin-bottom: var(--spacing-100);
+        @include small-display {
+          margin-bottom: 0;
+        }
       }
 
       @include small-display {
@@ -92,6 +100,7 @@
         margin-bottom: 0;
       }
     }
+
     &__title {
       font-family: var(--font-display);
       font-size: var(--fs-step-2);
@@ -116,6 +125,27 @@
 
       @include small-display {
         margin: 0;
+      }
+    }
+
+    &__preview {
+      @extend %button;
+
+      appearance: none;
+      border: 0;
+      display: flex;
+      justify-self: flex-end;
+      border-radius: 16rem;
+      background-color: var(--neutral-50);
+      padding: var(--spacing-100);
+      margin-left: var(--spacing-100);
+      &:hover {
+        background-color: var(--color-amethyst-500);
+      }
+      & > .iconoir-play-solid,
+      & > .iconoir-pause-solid {
+        color: var(--neutral-900);
+        font-size: var(--fs-step-2);
       }
     }
   }

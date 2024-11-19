@@ -78,20 +78,27 @@ chartsContainer.classList.add("musicCharts");
 
 musics.map((music) => {
     let card = document.createElement("div");
+    let albumCoverContainer = document.createElement("div")
     let albumCover = document.createElement("img");
     let albumCoverSrc = document.createAttribute("src");
-    let musicDetailsCont = document.createElement("div");
+    let albumCoverAlt = document.createAttribute("alt");
+    let albumPlayButton = document.createElement("button");
+    let albumPlayButtonIcon = document.createElement("i");
+    let musicDetailsCont = document.createElement(  "div");
     let musicTitle = document.createElement("p");
     let musicTitleText = document.createTextNode(music.title)
     let musicArtist = document.createElement("p");
     let musicArtistText = document.createTextNode(music.artist.name);
 
     chartsContainer.appendChild(card);
-    card.appendChild(albumCover);
+    card.appendChild(albumCoverContainer);
+    albumCoverContainer.classList.add("musicCharts__music__coverContainer")
+    albumCoverContainer.appendChild(albumCover);
     card.classList.add("musicCharts__music");
-    albumCover.setAttributeNode(albumCoverSrc)
+    albumCover.setAttributeNode(albumCoverSrc);
+    albumCover.setAttributeNode(albumCoverAlt);
     albumCoverSrc.value = music.album.cover_big;
-    albumCover.classList.add("musicCharts__music__cover");
+    albumCoverAlt.value = `${music.artist.name}'s ${music.album.title} album cover`
     card.appendChild(musicDetailsCont);
     musicDetailsCont.appendChild(musicTitle);
     musicDetailsCont.classList.add("musicCharts__music__details");
@@ -100,8 +107,20 @@ musics.map((music) => {
     musicDetailsCont.appendChild(musicArtist)
     musicArtist.appendChild(musicArtistText);
     musicArtist.classList.add("musicCharts__music__artist");
+    albumCover.classList.add("musicCharts__music__cover");
+    card.appendChild(albumPlayButton);
+    albumPlayButton.classList.add("musicCharts__music__preview");
+    albumPlayButton.appendChild(albumPlayButtonIcon);
+    albumPlayButtonIcon.classList.add("iconoir-play-solid");
 
-    card.addEventListener("hover", () => {
-        albumCover.classList.add("--hovered");
-    })
+    albumPlayButton.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        if (albumPlayButtonIcon.classList.contains("iconoir-play-solid")) {
+            albumPlayButtonIcon.classList.replace("iconoir-play-solid", "iconoir-pause-solid");
+        } else {
+            albumPlayButtonIcon.classList.replace("iconoir-pause-solid", "iconoir-play-solid");
+        }
+    });
+
 })
