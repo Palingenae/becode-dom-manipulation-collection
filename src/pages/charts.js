@@ -26,7 +26,7 @@ const userNameDescContainer = document.createElement("div")
 const usernameEl = document.createElement("h1");
 const username = document.createTextNode(user.name)
 const pageDescription = document.createElement("p");
-const pageDescriptionText = document.createTextNode("Deezer Music charts")
+const pageDescriptionText = document.createTextNode("Personal Deezer Music charts")
 const profilePhotoEl = document.createElement("img");
 const profilePhotoSrc = document.createAttribute("src");
 profilePhotoSrc.value = user.picture_medium;
@@ -46,21 +46,6 @@ pageDescription.classList.add("--subtitle");
 
 headerEl.appendChild(profilePhotoEl);
 profilePhotoEl.setAttributeNode(profilePhotoSrc);
-
-// const lovedSongsBlockLink = document.createElement("a");
-// const lovedSongsBlockLinkHref = document.createAttribute("href")
-// const lovedSongsBlock = document.createElement("section");
-// const lovedSongsName = document.createElement("p");
-// const lovedSongsNameText = document.createTextNode(`${lovedSongs.tracks.data.length} loved songs`);
-// rootChild.appendChild(lovedSongsBlockLink);
-// lovedSongsBlockLink.classList.add("lovedSongs__link")
-// lovedSongsBlockLink.appendChild(lovedSongsBlock);
-// lovedSongsBlock.classList.add("lovedSongs");
-// lovedSongsBlockLink.setAttributeNode(lovedSongsBlockLinkHref);
-// lovedSongsBlock.appendChild(lovedSongsName);
-// lovedSongsName.appendChild(lovedSongsNameText);
-// lovedSongsName.classList.add("lovedSongs__name");
-// lovedSongsBlockLinkHref.value('#');
 
 const chartsSection = document.createElement("section");
 const chartsContainer = document.createElement("div");
