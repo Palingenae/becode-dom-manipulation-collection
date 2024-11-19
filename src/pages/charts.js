@@ -89,6 +89,7 @@ musics.map((music) => {
     let musicTitleText = document.createTextNode(music.title)
     let musicArtist = document.createElement("p");
     let musicArtistText = document.createTextNode(music.artist.name);
+    const playedMusic = new Audio(music.preview);
 
     chartsContainer.appendChild(card);
     card.appendChild(albumCoverContainer);
@@ -113,13 +114,15 @@ musics.map((music) => {
     albumPlayButton.appendChild(albumPlayButtonIcon);
     albumPlayButtonIcon.classList.add("iconoir-play-solid");
 
-    albumPlayButton.addEventListener("click", (event) => {
+    albumPlayButton.addEventListener("click", async (event) => {
         event.preventDefault();
 
         if (albumPlayButtonIcon.classList.contains("iconoir-play-solid")) {
             albumPlayButtonIcon.classList.replace("iconoir-play-solid", "iconoir-pause-solid");
+            await playedMusic.play();
         } else {
             albumPlayButtonIcon.classList.replace("iconoir-pause-solid", "iconoir-play-solid");
+            playedMusic.pause();
         }
     });
 
